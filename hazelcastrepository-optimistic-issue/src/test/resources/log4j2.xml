@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="INFO">
+	<appenders>
+    	<Console name="Console" target="SYSTEM_OUT">
+        	<PatternLayout pattern="%d{ISO8601} [%t] %-5level %logger{1} %marker: %msg%n"/>
+        </Console>
+	</appenders>
+    <loggers>
+        <logger name="org.apache.camel.processor.aggregate.hazelcast.HazelcastAggregationRepository" additivity="false" level="TRACE">
+          <appenderRef ref="Console"/>
+        </logger>
+    	<logger name="com.tsi.dpp" additivity="false" level="TRACE">
+    		<appenderRef ref="Console"/>
+    	</logger>
+<!--         <logger name="org.activiti" additivity="false" level="TRACE"> -->
+<!--           <appenderRef ref="Console"/> -->
+<!--         </logger> -->
+        <root level="info">
+        	<appenderRef ref="Console"/>
+        </root>
+	</loggers>
+</configuration>
