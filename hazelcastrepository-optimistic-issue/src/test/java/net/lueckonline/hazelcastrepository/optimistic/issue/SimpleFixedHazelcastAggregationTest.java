@@ -7,13 +7,14 @@ import org.apache.camel.ProducerTemplate;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.mock.MockEndpoint;
 import org.apache.camel.processor.aggregate.AggregationStrategy;
-import org.apache.camel.processor.aggregate.hazelcast.HazelcastAggregationRepository;
 import org.apache.camel.test.junit4.CamelTestSupport;
 import org.junit.Test;
 
 import com.hazelcast.core.HazelcastInstance;
 
-public class SimpleHazelcastAggregationTest extends CamelTestSupport {
+import net.lueckonline.camel.hazelcast.HazelcastAggregationRepository;
+
+public class SimpleFixedHazelcastAggregationTest extends CamelTestSupport {
 
   private HazelcastAggregationRepository aggrRepo;
   
@@ -25,7 +26,7 @@ public class SimpleHazelcastAggregationTest extends CamelTestSupport {
   
   private HazelcastInstance hzInst;
   
-  public SimpleHazelcastAggregationTest() {
+  public SimpleFixedHazelcastAggregationTest() {
     super();
     hzInst = new com.hazelcast.test.TestHazelcastInstanceFactory().newHazelcastInstance();
 
